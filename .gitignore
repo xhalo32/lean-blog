@@ -1,0 +1,5 @@
+.lake
+result*
+_out
+# Book is generated from src
+Book

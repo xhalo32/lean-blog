@@ -1,0 +1,24 @@
+name = "blog"
+defaultTargets = [
+    "Book",
+] # generate-book needs to compile mathlib's static facets which are unavailable
+
+[[require]]
+name = "verso"
+scope = "leanprover"
+rev = "v4.29.0"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.29.0"
+
+[[lean_lib]]
+name = "Book"
+
+# Instead of the generate-book binary, we use Main.lean directly via
+#   lake build && lake env lean --run Main.lean --output _out --with-html-multi --verbose
+# This command is available in the nix-shell as `generate-book`
+# [[lean_exe]]
+# name = "generate-book"
+# root = "Main"
