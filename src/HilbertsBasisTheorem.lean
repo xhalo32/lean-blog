@@ -17,7 +17,7 @@ open Classical
 -/
 
 /-
-This definition [is in mathlib](https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Noetherian/Defs.html#IsNoetherianRing) and is generalized to submodules rather than ideals.
+This definition [is in mathlib](https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Noetherian/Defs.html#IsNoetherianRing) and is generalized to submodules.
 -/
 #check IsNoetherianRing
 
@@ -37,9 +37,7 @@ We only show $`(1) \Rightarrow (2)` as it's used in the proof of Hilbert's basis
 variable {R : Type*} [CommRing R]
 
 /-
-Let's begin by showing that if `a : ℕ →o Ideal R` is a monotone [^1] sequence of ideals (i.e. $`a₀ ⊆ a₁ ⊆ \cdots`) and $`S` is a finite subset of $`\bigcup_i a_i` then $`S ⊆ a_n` for some $`n`.
-
-[^1]: `→o` is a "bundled monotone function" and notation for `OrderHom`.
+Let's begin by showing that if `a : ℕ →o Ideal R`{margin}[`→o` is a "bundled monotone function" and notation for `OrderHom`.] is a monotone sequence of ideals (i.e. $`a₀ ⊆ a₁ ⊆ \cdots`) and $`S` is a finite subset of $`\bigcup_i a_i` then $`S ⊆ a_n` for some $`n`.
 
 The proof is a straight-forward induction in $`S`.
 -/
@@ -541,6 +539,7 @@ lemma f_sub_p_degree_lt [Nontrivial R] {I : Ideal R[X]} {hI : ¬ I.FG} {m : ℕ}
 
 Let $`I` be an ideal in $`R[X]`.
 If $`R` is trivial, every ideal of $`R[X]` is `⊥`, which is finitely generated.
+Therefore we can assume $`R` is not trivial.
 
 By way of contradiction, assume $`I` is not finitely generated.
 By the ascending chain property (`noeth_acc`) we get that $`(c₁, c₂, ...) = (c₁, c₂, ..., cₘ)` for some $`m ∈ ℕ`.
