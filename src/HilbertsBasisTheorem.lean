@@ -1,5 +1,8 @@
 /-
 Hilbert's Basis Theorem
+%%%
+htmlSplit := .never
+%%%
 -/
 import Mathlib.Tactic
 open Ideal
@@ -7,9 +10,11 @@ open Polynomial
 open Classical
 
 /-
-# Noetherian Rings
-
 [Conrad: Noetherian Rings][conrad] is the primary source for this formalization.
+You can explore this post as a lean file in [live.lean-lang.org](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fxhalo32%2Flean-blog%2Frefs%2Fheads%2Fmain%2Fsrc%2FHilbertsBasisTheorem.lean).
+The source code is available [here](https://github.com/xhalo32/lean-blog/blob/main/src/HilbertsBasisTheorem.lean).
+
+# Noetherian Rings
 
 *Definition 1.1*: A commutative ring $`R` is called _Noetherian_ if each ideal in $`R` is finitely generated.
 
@@ -17,12 +22,12 @@ open Classical
 -/
 
 /-
-This definition [is in mathlib](https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Noetherian/Defs.html#IsNoetherianRing) and is generalized to submodules.
+This definition [is in mathlib](https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Noetherian/Defs.html#IsNoetherianRing) and is generalized to modules.
 -/
 #check IsNoetherianRing
 
 /-
-We begin with the finite chain property of noetherian rings.
+We begin with the finite chain property of Noetherian rings.
 
 *Theorem 3.1*: The following conditions on a commutative ring $`R` are equivalent:
 1. $`R` is Noetherian: all ideals in $`R` are finitely generated.

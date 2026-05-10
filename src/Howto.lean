@@ -1,5 +1,8 @@
 /-
 How to use verso, a short guide
+%%%
+htmlSplit := .never
+%%%
 -/
 
 /-
