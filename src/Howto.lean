@@ -33,6 +33,6 @@ live-server -H 127.0.0.1 --hard -o _out/html-multi/
 - Packaging verso with nix required adding `defaultFacets := #[LeanLib.staticFacet]` to all library targets as well as removing default targets (such as tests) which don't need to be built to use verso.
   Verso does not appear to be designed to be used as a prebuilt dependency...
 - We also need to patch the verso to build `Verso.Output.Html.CssVars` and `Verso.Output.Html.KaTeX` which are not exported by default.
-  This can be done by patching `lean_lib Verso` with ```globs := #[.andSubmodules `Verso]```.
+  This can be done by patching `lean_lib Verso` with ``globs := #[.andSubmodules `Verso]``.
 - Verso uses static and shared facts from MD4Lean so those need be built with nix.
 -/

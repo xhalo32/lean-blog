@@ -29,6 +29,7 @@ let
     '';
 
     postBuild =
+      # Recursively get lean deps
       let overridesFile = mkOverridesFile blog.passthru.allLeanDeps; in
     ''
       lake --no-ansi --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
