@@ -49,9 +49,9 @@ let
   inherit (import ./nix/blog.nix { inherit pkgs; }) blog preprocess-book generate-book livereload;
 in
 {
-  # inherit (pkgs.leanPackages) md4lean verso subverso;
-  inherit blog;
-  verso-lib = pkgs.leanPackages.verso;
+  inherit (pkgs.leanPackages) md4lean verso subverso;
+  inherit blog overlay;
+
   shell = pkgs.mkShellNoCC {
     # inputsFrom = [ blog ];
     buildInputs = [
