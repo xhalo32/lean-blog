@@ -389,7 +389,7 @@ lemma f_natDegree_eq {I : Ideal R[X]} (hI : ¬ I.FG) (k) : (f hI k).val.natDegre
 Next, we define $`pᵣ` to be the polynomial
 
 $$`
-p := \sum_{k = 0}^m r_k f_k X^{d_{m + 1} - d_k}
+pᵣ := \sum_{k = 0}^m r_k f_k X^{d_{m + 1} - d_k}
 `
 
 where $`rₖ ∈ R`.
@@ -584,5 +584,5 @@ Hilbert's basis theorem is of course available in mathlib, and the proof therein
 /-
 ## Updates
 
-- 2026-05-13: simplified `f_sub_p_degree_lt` to use `p_coeff_eq`.
+- 2026-05-13: Simplified `f_sub_p_degree_lt` to use `p_coeff_eq`. Fixed typo.
 -/
