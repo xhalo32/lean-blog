@@ -449,7 +449,7 @@ lemma hf_r_mul_coeff [Nontrivial R] {I : Ideal R[X]} (hI : ¬ I.FG) {m : ℕ} (r
     exact leadingCoeff_mul_X_pow
 
 -- 2.
-lemma p_coeff_eq [Nontrivial R] {I : Ideal R[X]} (hI : ¬ I.FG) {m : ℕ} {r : Fin (m + 1) → R} (hr : ∑ i : Fin (m + 1), r i * c hI i = c hI (m + 1))
+lemma p_coeff_eq [Nontrivial R] {I : Ideal R[X]} {hI : ¬ I.FG} {m : ℕ} {r : Fin (m + 1) → R} (hr : ∑ i : Fin (m + 1), r i * c hI i = c hI (m + 1))
     : (p hI r).val.coeff (d hI (m + 1)) = c hI (m + 1) := by
   rw [← hr]
   unfold p
@@ -480,7 +480,7 @@ lemma p_degree_eq [Nontrivial R] {I : Ideal R[X]} {hI : ¬ I.FG} {m : ℕ} {r : 
       simp
     grind
   · apply le_degree_of_ne_zero
-    rw [p_coeff_eq hI hr]
+    rw [p_coeff_eq hr]
     exact c_ne_zero hI
 
 -- 4.
@@ -527,17 +527,7 @@ lemma f_sub_p_degree_lt [Nontrivial R] {I : Ideal R[X]} {hI : ¬ I.FG} {m : ℕ}
     have hp_deg := p_degree_eq hr
     rw [degree_eq_iff_natDegree_eq (p_ne_zero hr)] at hp_deg
     rw [hp_deg]
-
-    -- this is the key step
-    rw [p_def]
-    rw [finset_sum_coeff]
-    rw [← hr]
-    congr
-    ext i
-
-    simp [smul_eq_C_mul]
-    rw [← hf_r_mul_coeff]
-    rfl
+    rw [p_coeff_eq hr]
 
 /-
 ## Hilbert's Basis Theorem
@@ -589,3 +579,10 @@ Hilbert's basis theorem is of course available in mathlib, and the proof therein
 -/
 
 #check Polynomial.isNoetherianRing
+
+
+/-
+## Updates
+
+- 2026-05-13: simplified `f_sub_p_degree_lt` to use `p_coeff_eq`.
+-/
