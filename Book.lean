@@ -1,6 +1,7 @@
 import VersoManual
 import Book.HilbertsBasisTheorem
 import Book.Howto
+import Book.ExactModCastTrick
 
 open Verso.Genre Manual
 open Verso.Genre.Manual.InlineLean
@@ -17,3 +18,4 @@ Lean-related blog posts and articles.
 
 {include 1 Book.HilbertsBasisTheorem}
 {include 1 Book.Howto}
+{include 1 Book.ExactModCastTrick}
