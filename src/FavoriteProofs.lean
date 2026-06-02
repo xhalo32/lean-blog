@@ -12,7 +12,7 @@ This is a collection of proofs I wrote that are "nice."
 section rearranged_series
 
 /-
-## Convergence of rearranged series
+# Convergence of rearranged series
 
 While reformalizing [Tao's Analysis I Lean companion](https://teorth.github.io/analysis/Analysis/Section_7_4/), I had a go at proving the convergence of a rearranged series myself.
 This is what I came up with:

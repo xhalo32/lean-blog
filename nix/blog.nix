@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   lib = pkgs.lib;
-  inherit (import ./util.nix {inherit pkgs;}) mkOverridesFile;
+  inherit (import ./util.nix { inherit pkgs; }) mkOverridesFile;
 
   # TODO the jq script includes unnecessary new lines inside ```lean blocks
   preprocess-book = pkgs.writeShellScriptBin "preprocess-book" ''
@@ -21,7 +21,7 @@ let
 
     leanPackageName = "blog";
 
-    buildTargets = ["Book"]; # This is also set in lakefile.toml as the only default
+    buildTargets = [ "Book" ]; # This is also set in lakefile.toml as the only default
 
     # Generate Book subdirectory
     preBuild = ''
@@ -30,10 +30,9 @@ let
 
     postBuild =
       # Recursively get lean deps
-      let overridesFile = mkOverridesFile blog.passthru.allLeanDeps; in
-    ''
-      lake --no-ansi --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
-    '';
+      ''
+        lake --no-ansi --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
+      '';
 
     installPhase = ''
       runHook preInstall
@@ -48,8 +47,10 @@ let
     ];
   };
 
+  overridesFile = mkOverridesFile blog.passthru.allLeanDeps;
+
   generate-book = pkgs.writeShellScriptBin "generate-book" ''
-    lake build && lake env lean --run Main.lean --output _out --with-html-multi --verbose
+    lake build --packages=${overridesFile} && lake --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
   '';
 
   livereload = pkgs.writeShellScriptBin "livereload" ''
@@ -57,5 +58,10 @@ let
   '';
 in
 {
-  inherit blog preprocess-book generate-book livereload;
+  inherit
+    blog
+    preprocess-book
+    generate-book
+    livereload
+    ;
 }
