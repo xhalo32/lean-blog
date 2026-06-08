@@ -13,6 +13,7 @@ in
 {
   sources ? import ./npins,
   system ? builtins.currentSystem,
+  # pkgs ? import ../nixpkgs-lean4 {
   pkgs ? import sources.nixpkgs {
     inherit system;
     config = { };

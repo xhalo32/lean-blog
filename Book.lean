@@ -4,6 +4,7 @@ import Book.Howto
 import Book.ExactModCastTrick
 import Book.FavoriteProofs
 import Book.«Lean-4-30-0»
+import Book.Codeberg
 
 open Verso.Genre Manual
 open Verso.Genre.Manual.InlineLean
@@ -23,3 +24,4 @@ Lean-related blog posts and articles.
 {include 1 Book.ExactModCastTrick}
 {include 1 Book.FavoriteProofs}
 {include 1 Book.«Lean-4-30-0»}
+{include 1 Book.Codeberg}

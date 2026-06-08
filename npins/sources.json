@@ -4,15 +4,15 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "xhalo32",
+        "owner": "nixos",
         "repo": "nixpkgs"
       },
-      "branch": "lean4-4-30-0",
+      "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "a26b66330f6fa572e7005ee2a1eb031093456e6e",
-      "url": "https://github.com/xhalo32/nixpkgs/archive/a26b66330f6fa572e7005ee2a1eb031093456e6e.tar.gz",
-      "hash": "sha256-sLMhWNkkmlKeZtKy/JnARRH5iOaxmoPvaj3jnr1qeg8="
+      "revision": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+      "url": "https://github.com/nixos/nixpkgs/archive/a799d3e3886da994fa307f817a6bc705ae538eeb.tar.gz",
+      "hash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY="
     }
   },
-  "version": 7
+  "version": 8
 }

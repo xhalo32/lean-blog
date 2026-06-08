@@ -1,11 +1,20 @@
-# A Basic Verso Book
-
-A minimal book built with Verso's Manual genre. Includes two chapters, with inline Lean code in the first.
+# Lean blog
 
 Build with:
 ```
-lake build
-lake exe generate-book
+nix-build -A blog
 ```
 
-The generated site will be in `_out/html-multi/`.
+The generated site will be in `result/`.
+
+You can inspect the result with e.g.
+
+```
+python -m http.server 8000 -d result
+```
+
+---
+
+```
+Copyright (C) 2026  Niklas Halonen
+```

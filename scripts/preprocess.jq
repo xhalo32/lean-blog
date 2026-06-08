@@ -1,3 +1,5 @@
+# source: https://github.com/l-oksanen/lean-notes
+
 split("(^|\\n)(-/|/-)"; "") | 
 map(ltrimstr("\n")) | 
 
