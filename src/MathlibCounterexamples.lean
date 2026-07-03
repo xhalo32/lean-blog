@@ -5,18 +5,6 @@ htmlSplit := .never
 %%%
 -/
 
-open Verso.Genre Manual
-open Verso.Doc Elab
-open Verso.ArgParse
-open Lean
-
-@[code_block_expander nix]
-public meta def nix : CodeBlockExpander
-  | _args, code => do
-    let code := code.getString
-    -- TODO add syntax highlighting
-    return #[← ``(Block.code $(quote code))]
-
 /-
 [Recently I had to build mathlib's Counterexamples with lean.](https://github.com/l-oksanen/lean-notes/pull/4)
 As I had already opted to use nix, where `leanPackages.mathlib` doesn't come with Counterexamples, I had to come up with a workaround to avoid having to rebuild mathlib.

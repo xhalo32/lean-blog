@@ -9,6 +9,7 @@ $lines[0] as $title |
 .[2] as $preamble | 
 
 "import VersoManual",
+"import Meta",
 $preamble,
 "open Verso.Genre Manual InlineLean",
 "#doc (Manual) \"" + $title + "\" =>",

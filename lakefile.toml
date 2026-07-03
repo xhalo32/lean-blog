@@ -16,6 +16,9 @@ rev = "v4.30.0"
 [[lean_lib]]
 name = "Book"
 
+[[lean_lib]]
+name = "Meta"
+
 # Instead of the generate-book binary, we use Main.lean directly via
 #   lake build && lake env lean --run Main.lean --output _out --with-html-multi --verbose
 # This command is available in the nix-shell as `generate-book`

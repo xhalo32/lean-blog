@@ -28,11 +28,9 @@ let
       ${lib.getExe preprocess-book}
     '';
 
-    postBuild =
-      # Recursively get lean deps
-      ''
-        lake --no-ansi --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
-      '';
+    postBuild = ''
+      lake --no-ansi env lean --run Main.lean --output _out --with-html-multi --verbose
+    '';
 
     installPhase = ''
       runHook preInstall
@@ -50,10 +48,16 @@ let
   overridesFile = mkOverridesFile blog.passthru.allLeanDeps;
 
   generate-book = pkgs.writeShellScriptBin "generate-book" ''
-    lake build --packages=${overridesFile} && lake --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
+    lake build && lake env lean --run Main.lean --output _out --with-html-multi --verbose
   '';
+  # generate-book = pkgs.writeShellScriptBin "generate-book" ''
+  #   lake build --packages=${overridesFile} && lake --packages=${overridesFile} env lean --run Main.lean --output _out --with-html-multi --verbose
+  # '';
 
   livereload = pkgs.writeShellScriptBin "livereload" ''
+    echo "LAKE_PACKAGES: $LAKE_PACKAGES"
+    lake --version
+    preprocess-book && generate-book
     inotifywait -r -m -q -e close_write src Book.lean | while read -r phat event file; do preprocess-book && generate-book; done
   '';
 in

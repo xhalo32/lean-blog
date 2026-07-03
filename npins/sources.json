@@ -4,14 +4,28 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "nixos",
+        "owner": "xhalo32",
         "repo": "nixpkgs"
       },
-      "branch": "nixos-unstable",
+      "branch": "lean4-4-31-0",
       "submodules": false,
-      "revision": "a799d3e3886da994fa307f817a6bc705ae538eeb",
-      "url": "https://github.com/nixos/nixpkgs/archive/a799d3e3886da994fa307f817a6bc705ae538eeb.tar.gz",
-      "hash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY="
+      "revision": "968ad797d946f7bab08387270a67eb2ea1b0d5d7",
+      "url": "https://github.com/xhalo32/nixpkgs/archive/968ad797d946f7bab08387270a67eb2ea1b0d5d7.tar.gz",
+      "hash": "sha256-oIFGeLjf8gHpQSoQAfMZ53wPZeH9plPpGaxeFIVgLj8="
+    },
+    "verso-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://codeberg.org/",
+        "owner": "xhalo32",
+        "repo": "verso-nix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "5b3c30aa782151aa2ef32339314add70bdf003c2",
+      "url": "https://codeberg.org/xhalo32/verso-nix/archive/5b3c30aa782151aa2ef32339314add70bdf003c2.tar.gz",
+      "hash": "sha256-etr9FwMXDPip19kJPtkYq75pfpF0Bs0LoZxjRut6Hko="
     }
   },
   "version": 8

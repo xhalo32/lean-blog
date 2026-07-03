@@ -7,8 +7,8 @@ let
   src = fetchFromGitHub {
     owner = "leanprover";
     repo = "subverso";
-    rev = "ce893b9042128037e2d3c0158b9567fab9fae268";
-    hash = "sha256-uUmLu/zIataPnSxh3v8Wej5PGnrNaSkLszltJoT7FrQ=";
+    rev = "0bd508e8362f56d4a05cbf63614d4c97db954041";
+    hash = "sha256-H3qYUxHaIAZT9iLjv7i8BEEb4gwAd2t1WI4LwMKaQow=";
   };
 in
 buildLakePackage {

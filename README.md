@@ -13,6 +13,18 @@ You can inspect the result with e.g.
 python -m http.server 8000 -d result
 ```
 
+## Live reload
+
+The nix-shell comes with a `livereload` command.
+
+If you hit a weird error like
+
+```
+error: (interpreter) unknown declaration 'Lean.Name.toStringWithSep._at_.Lake.LeanExeConfig.exeName._proj.spec_0'
+```
+
+then try removing `.lake`.
+
 ---
 
 ```
